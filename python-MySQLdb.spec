@@ -1,5 +1,4 @@
-
-%include /usr/lib/rpm/macros.python
+%include	/usr/lib/rpm/macros.python
 
 Summary:	An Python interface to MySQL
 Summary(pl):	Interfejs Pythona do MySQL
@@ -11,11 +10,11 @@ Group:		Libraries/Python
 Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/mysql-python/
 Requires:	mysql >= 3.23.49
-%pyrequires_eq    python-modules
 BuildRequires:	mysql-devel >= 3.23.49
-BuildRequires:	python-devel >= 1.5.2
+BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
 BuildRequires:	zlib-devel
+%pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
