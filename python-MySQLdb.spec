@@ -49,10 +49,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGELOG doc/*
 %attr(755,root,root) %{py_sitescriptdir}/*.so
-%{py_sitescriptdir}/*.py?
+%{py_sitescriptdir}/*
 
 %dir %{py_sitescriptdir}/MySQLdb
-%{py_sitescriptdir}/MySQLdb/*.py?
+%{py_sitescriptdir}/MySQLdb/*
 
 %dir %{py_sitescriptdir}/MySQLdb/constants
-%{py_sitescriptdir}/MySQLdb/constants/*.py?
+%{py_sitescriptdir}/MySQLdb/constants/*
