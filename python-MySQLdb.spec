@@ -1,4 +1,4 @@
-[B# $Revision: 1.12.2.2 $, $Date: 2003-09-10 14:18:42 $
+[B# $Revision: 1.12.2.3 $, $Date: 2003-09-10 14:50:52 $
 %include	/usr/lib/rpm/macros.python
 
 Summary:	An Python interface to MySQL
@@ -8,8 +8,8 @@ Version:	0.9.1
 Release:	3
 License:	GPL
 Group:		Libraries/Python
-Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
-# Source0-md5:	49808250f90f724a36c9d992af41c6ba
+Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
+# Source0-md5:	802e271d46e3d845045ce0378f82fd85
 URL:		http://sourceforge.net/projects/mysql-python/
 Requires:	mysql >= 3.23.49
 BuildRequires:	mysql-devel >= 3.23.49
