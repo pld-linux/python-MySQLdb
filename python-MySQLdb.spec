@@ -11,7 +11,7 @@ Group:		Libraries/Python
 Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/mysql-python/
 Requires:	mysql >= 3.23.49
-%requires_eq    python-modules
+%pyrequires_eq    python-modules
 BuildRequires:	mysql-devel >= 3.23.49
 BuildRequires:	python-devel >= 1.5.2
 BuildRequires:	rpm-pythonprov
