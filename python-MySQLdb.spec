@@ -7,7 +7,7 @@ Version:	0.9.2
 Release:	2
 License:	GPL
 Group:		Libraries/Python
-Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/mysql-python/
 #Requires:	mysql >= 3.23.49
 BuildRequires:	mysql-devel >= 4.0.10
