@@ -1,4 +1,3 @@
-
 Summary:	A Python interface to MySQL
 Summary(pl):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
@@ -49,10 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGELOG doc/*
 %attr(755,root,root) %{py_sitescriptdir}/*.so
-%{py_sitescriptdir}/*
+%{py_sitescriptdir}/*.py?
 
 %dir %{py_sitescriptdir}/MySQLdb
-%{py_sitescriptdir}/MySQLdb/*
+%{py_sitescriptdir}/MySQLdb/*.py?
 
 %dir %{py_sitescriptdir}/MySQLdb/constants
-%{py_sitescriptdir}/MySQLdb/constants/*
+%{py_sitescriptdir}/MySQLdb/constants/*.py?
