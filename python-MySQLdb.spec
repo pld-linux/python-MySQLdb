@@ -1,75 +1,50 @@
-
-%define module MySQLdb
-%define python_sitepkgsdir %(echo `python -c "import sys; print (sys.prefix + '/lib/python' + sys.version[:3] + '/site-packages/')"`)
-%define python_config_dir %(echo `python -c "import sys; print (sys.prefix + '/lib/python' + sys.version[:3] + '/config/')"`)
-%define python_compile python -c "import compileall; compileall.compile_dir('.')"
-%define python_compile_opt python -O -c "import compileall; compileall.compile_dir('.')"
-
-Summary:	Python interface to MySQL 
-Summary(pl):	Interfejs pomiêdzy jêzykiem Python a baz± danych MySQL
-Name:		python-%{module}
-Version:	0.2.2
+Summary:	An Python interface to MySQL
+Name:		python-MySQLdb
+Version:	0.9.0
 Release:	1
-Copyright:	Distributable 
+License:	GPL
+Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
+URL:		http://sourceforge.net/projects/mysql-python/
 Group:		Development/Languages/Python
 Group(de):	Entwicklung/Sprachen/Python
 Group(pl):	Programowanie/Jêzyki/Python
-Source0:	http://dustman.net/andy/python/MySQLdb/%{version}/%{module}-%{version}.tar.gz
+Requires:	mysql >= 3.22.32 
 Requires:	python >= 1.5.2
 BuildRequires:	python-devel >= 1.5.2
 BuildRequires:	mysql-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+
 %description
-This package provides access to MySQL data from Python.
+An interface to the popular MySQL database server for
+Python. The design goals are:
+
+- Compliance with Python database API version 2.0
+- Thread-safety
+- Thread-friendliness (threads will not block each other)
 
 %description -l pl
 Ten pakiet zapewnia dostêp do baz danych MySQL z poziomu skryptów
 jêzyka Python.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n MySQL-python-%{version}
 
 %build
-install %{python_config_dir}/Makefile.pre.in .
-%{__make} -f Makefile.pre.in boot
-%{__make} OPT="%{rpmcflags}"
-
-%python_compile
-%python_compile_opt
+env CFLAGS="%{rpmcflags}" %{_bindir}/python setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+%{_bindir}/python -- setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+gzip -9nf README
+tmpfile=INSTALLED_FILES.$$
+grep -v 'py$' INSTALLED_FILES | sort > $tmpfile && mv $tmpfile INSTALLED_FILES
 
-install -d $RPM_BUILD_ROOT%{python_sitepkgsdir}/%{module}
-echo MySQLdb > $RPM_BUILD_ROOT%{python_sitepkgsdir}/%{module}.pth
-install _mysqlmodule.so %{module}.{py,pyc,pyo} $RPM_BUILD_ROOT%{python_sitepkgsdir}/%{module}
-
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
-
-gzip -9nf examples/README
-
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
-
-gzip -9nf README license.py doc/*.sgml
-install -d html
-mv -f doc/*.html html
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f INSTALLED_FILES
 %defattr(644,root,root,755)
-%doc {README,license.py,doc/*.sgml}.gz html
-
-%dir %{python_sitepkgsdir}/%{module}
-%{python_sitepkgsdir}/%{module}.pth
-%{python_sitepkgsdir}/%{module}/%{module}.py
-%{python_sitepkgsdir}/%{module}/%{module}.pyc
-%{python_sitepkgsdir}/%{module}/%{module}.pyo
-
-%attr(755,root,root) %{python_sitepkgsdir}/%{module}/_mysqlmodule.so
-
-%dir %{_examplesdir}/%{name}
-%{_examplesdir}/%{name}/*
+%doc *.gz doc/*.html
