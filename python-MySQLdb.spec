@@ -2,12 +2,12 @@
 Summary:	A Python interface to MySQL
 Summary(pl):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
-# Source0-md5:	e961a6bca10dc3d502db74ad75423b0e
+# Source0-md5:	beaf3c65051a6a1716cffa0d7a1bfd61
 URL:		http://sourceforge.net/projects/mysql-python/
 #Requires:	mysql >= 3.23.49
 BuildRequires:	mysql-devel >= 4.0.10
