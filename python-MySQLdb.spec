@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.python
 
-Summary:	An Python interface to MySQL
+Summary:	A Python interface to MySQL
 Summary(pl):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
 Version:	0.9.2
