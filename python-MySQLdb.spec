@@ -1,4 +1,3 @@
-[B# $Revision: 1.12.2.3 $, $Date: 2003-09-10 14:50:52 $
 %include	/usr/lib/rpm/macros.python
 
 Summary:	An Python interface to MySQL
