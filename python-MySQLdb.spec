@@ -34,7 +34,7 @@ jêzyka Python.
 %build
 install %{python_config_dir}/Makefile.pre.in .
 %{__make} -f Makefile.pre.in boot
-%{__make} OPT="$RPM_OPT_FLAGS"
+%{__make} OPT="%{rpmcflags}"
 
 %python_compile
 %python_compile_opt
