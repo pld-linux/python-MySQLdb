@@ -7,7 +7,7 @@ License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://prdownloads.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/mysql-python/
-Requires:	mysql >= 3.22.32 
+Requires:	mysql >= 3.22.32
 Requires:	python >= 1.5.2
 BuildRequires:	python-devel >= 1.5.2
 BuildRequires:	mysql-devel
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
 %description
-An interface to the popular MySQL database server for
-Python. The design goals are:
+An interface to the popular MySQL database server for Python. The
+design goals are:
 
 - Compliance with Python database API version 2.0
 - Thread-safety
