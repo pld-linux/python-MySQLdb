@@ -38,7 +38,6 @@ env CFLAGS="%{rpmcflags}" %{_bindir}/python setup.py build
 rm -rf $RPM_BUILD_ROOT
 python -- setup.py install \
 	--root=$RPM_BUILD_ROOT \
-	--install-lib=%{py_sitescriptdir} \
 	--optimize=2
 
 %clean
@@ -47,11 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README doc/*
-%attr(755,root,root) %{py_sitescriptdir}/*.so
-%{py_sitescriptdir}/*.py?
-
-%dir %{py_sitescriptdir}/MySQLdb
-%{py_sitescriptdir}/MySQLdb/*.py?
-
-%dir %{py_sitescriptdir}/MySQLdb/constants
-%{py_sitescriptdir}/MySQLdb/constants/*.py?
+%attr(755,root,root) %{py_sitedir}/*.so
+%{py_sitedir}/*.py?
+%dir %{py_sitedir}/MySQLdb
+%{py_sitedir}/MySQLdb/*.py?
+%dir %{py_sitedir}/MySQLdb/constants
+%{py_sitedir}/MySQLdb/constants/*.py?
