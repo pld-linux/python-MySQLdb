@@ -1,0 +1,11 @@
+--- MySQL-python-1.2.1_p2/_mysql.c.wiget	2006-09-28 10:17:12.000000000 +0200
++++ MySQL-python-1.2.1_p2/_mysql.c	2006-09-28 10:20:38.000000000 +0200
+@@ -1120,7 +1120,7 @@
+ 	PyObject *args)
+ {
+ 	PyObject *o=NULL, *d=NULL, *r=NULL, *item, *quoted, *pkey; 
+-	int ppos = 0;
++	Py_ssize_t ppos = 0;
+ 	if (!PyArg_ParseTuple(args, "O!O:escape_dict", &PyDict_Type, &o, &d))
+ 		goto error;
+ 	if (!PyMapping_Check(d)) {
