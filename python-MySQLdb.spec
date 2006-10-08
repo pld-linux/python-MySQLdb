@@ -10,8 +10,7 @@ Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 Patch0:		%{name}-py2.5.patch
 URL:		http://sourceforge.net/projects/mysql-python/
 BuildRequires:	mysql-devel >= 4.0.10
-# fix py2.5.patch ( http://www.python.org/dev/peps/pep-0353/ ) or 
-BuildRequires:	python-devel >= 2.5
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	zlib-devel
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,7 +25,9 @@ design goals are:
 
 %description -l pl
 Ten pakiet zapewnia dostêp do baz danych MySQL z poziomu skryptów
-jêzyka Python.
+jêzyka Python. Projekt jest tworzony z my¶l± o:
+- zgodno¶ci z bazodanowym API Pythona w wersji 2.0
+- przyjazno¶ci± dla w±tków (w±tki nie zablokuj± siê nawzajem).
 
 %prep
 %setup  -q -n MySQL-python-%{version}
