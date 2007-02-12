@@ -1,5 +1,5 @@
 Summary:	A Python interface to MySQL
-Summary(pl):	Interfejs Pythona do MySQL
+Summary(pl.UTF-8):   Interfejs Pythona do MySQL
 Name:		python-MySQLdb
 Version:	1.2.1_p2
 Release:	6
@@ -23,11 +23,11 @@ design goals are:
 - Thread-safety
 - Thread-friendliness (threads will not block each other)
 
-%description -l pl
-Ten pakiet zapewnia dostêp do baz danych MySQL z poziomu skryptów
-jêzyka Python. Projekt jest tworzony z my¶l± o:
-- zgodno¶ci z bazodanowym API Pythona w wersji 2.0
-- przyjazno¶ci± dla w±tków (w±tki nie zablokuj± siê nawzajem).
+%description -l pl.UTF-8
+Ten pakiet zapewnia dostÄ™p do baz danych MySQL z poziomu skryptÃ³w
+jÄ™zyka Python. Projekt jest tworzony z myÅ›lÄ… o:
+- zgodnoÅ›ci z bazodanowym API Pythona w wersji 2.0
+- przyjaznoÅ›ciÄ… dla wÄ…tkÃ³w (wÄ…tki nie zablokujÄ… siÄ™ nawzajem).
 
 %prep
 %setup  -q -n MySQL-python-%{version}
