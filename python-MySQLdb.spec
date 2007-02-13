@@ -1,5 +1,5 @@
 Summary:	A Python interface to MySQL
-Summary(pl.UTF-8):   Interfejs Pythona do MySQL
+Summary(pl.UTF-8):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
 Version:	1.2.1_p2
 Release:	6
