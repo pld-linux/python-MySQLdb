@@ -11,6 +11,7 @@ Patch0:		%{name}-branch.patch
 URL:		http://sourceforge.net/projects/mysql-python/
 BuildRequires:	mysql-devel >= 4.0.10
 BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-setuptools
 BuildRequires:	zlib-devel
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
