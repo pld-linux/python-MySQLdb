@@ -2,11 +2,11 @@ Summary:	A Python interface to MySQL
 Summary(pl.UTF-8):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
 Version:	1.2.3
-Release:	0.c1.2
+Release:	1
 License:	GPL
 Group:		Libraries/Python
-Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}c1.tar.gz
-# Source0-md5:	310dd856e439d070b59ece6dd7a0734d
+Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
+# Source0-md5:	215eddb6d853f6f4be5b4afc4154292f
 URL:		http://sourceforge.net/projects/mysql-python/
 BuildRequires:	mysql-devel >= 4.0.10
 BuildRequires:	python-devel >= 1:2.5
@@ -32,7 +32,7 @@ języka Python. Projekt jest tworzony z myślą o:
 - przyjaznością dla wątków (wątki nie zablokują się nawzajem).
 
 %prep
-%setup  -q -n MySQL-python-%{version}c1
+%setup  -q -n MySQL-python-%{version}
 
 %build
 env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{_bindir}/python setup.py build
