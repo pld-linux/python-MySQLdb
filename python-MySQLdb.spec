@@ -35,7 +35,7 @@ języka Python. Projekt jest tworzony z myślą o:
 %setup  -q -n MySQL-python-%{version}
 
 %build
-env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{_bindir}/python setup.py build
+env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{_bindir}/%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
