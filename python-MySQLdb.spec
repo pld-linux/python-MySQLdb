@@ -8,6 +8,7 @@ Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
 # Source0-md5:	215eddb6d853f6f4be5b4afc4154292f
 URL:		http://sourceforge.net/projects/mysql-python/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	mysql-devel >= 4.0.10
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	python-modules
