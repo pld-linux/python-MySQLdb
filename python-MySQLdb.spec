@@ -2,7 +2,7 @@ Summary:	A Python interface to MySQL
 Summary(pl.UTF-8):	Interfejs Pythona do MySQL
 Name:		python-MySQLdb
 Version:	1.2.3
-Release:	8
+Release:	9
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/mysql-python/MySQL-python-%{version}.tar.gz
@@ -36,15 +36,15 @@ języka Python. Projekt jest tworzony z myślą o:
 %setup  -q -n MySQL-python-%{version}
 
 %build
-env CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1" %{_bindir}/%py_build
+CFLAGS="%{rpmcflags} -DHAVE_OPENSSL=1"
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python -- setup.py install \
-	--root=$RPM_BUILD_ROOT \
-	--optimize=2
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/{MySQLdb/{constants/,},}*.py
+%py_install
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,9 +53,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README doc/*
 %attr(755,root,root) %{py_sitedir}/*.so
-%{py_sitedir}/*.py?
+%{py_sitedir}/*.py[co]
 %dir %{py_sitedir}/MySQLdb
-%{py_sitedir}/MySQLdb/*.py?
+%{py_sitedir}/MySQLdb/*.py[co]
 %dir %{py_sitedir}/MySQLdb/constants
-%{py_sitedir}/MySQLdb/constants/*.py?
+%{py_sitedir}/MySQLdb/constants/*.py[co]
 %{py_sitedir}/*.egg-info
